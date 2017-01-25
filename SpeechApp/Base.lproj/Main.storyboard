@@ -56,6 +56,7 @@
                     <connections>
                         <outlet property="microphoneButton" destination="zgV-Uk-shK" id="mUa-NO-SuH"/>
                         <outlet property="noteLabel" destination="Sav-TK-ElV" id="O06-L3-X06"/>
+                        <outlet property="tapButton" destination="6q4-hi-HPH" id="Unj-Ah-pYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

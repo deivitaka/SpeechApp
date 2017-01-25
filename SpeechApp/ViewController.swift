@@ -13,6 +13,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var tapButton: UIButton!
     
     private var listening = false
     private var speechRecognizer: SFSpeechRecognizer?
@@ -60,9 +61,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        tapButton.isEnabled = available
         if available {
             // Prepare to listen
             listening = true
+            noteLabel.text = "Tap to listen"
             viewTapped(microphoneButton)
         } else {
             noteLabel.text = "Recognition is not available."
@@ -152,7 +155,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                
+
                 self.noteLabel.text = "Tap to listen"
             }
         })
