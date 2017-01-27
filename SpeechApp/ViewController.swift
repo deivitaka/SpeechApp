@@ -12,7 +12,7 @@ import Speech
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var noteLabel: UILabel!
-    @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var microphoneImageView: UIImageView!
     @IBOutlet weak var tapButton: UIButton!
     
     private var listening = false
@@ -41,7 +41,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 if self.listening {
                     // Setup the text and stop the recording
                     self.listening = false
-                    self.microphoneButton.setImage(UIImage(named: "Microphone"), for: .normal)
+                    self.microphoneImageView.image = UIImage(named: "Microphone")
                     
                     if granted {
                         self.stopListening()
@@ -49,7 +49,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 } else {
                     // Setup the text and start recording
                     self.listening = true
-                    self.microphoneButton.setImage(UIImage(named: "Microphone Filled"), for: .normal)
+                    self.microphoneImageView.image = UIImage(named: "Microphone Filled")
                     self.noteLabel.text = message
                     
                     if granted {
@@ -66,7 +66,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             // Prepare to listen
             listening = true
             noteLabel.text = "Tap to listen"
-            viewTapped(microphoneButton)
+            viewTapped(tapButton)
         } else {
             noteLabel.text = "Recognition is not available."
         }

@@ -24,10 +24,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sAc-tB-IQr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgV-Uk-shK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Microphone" translatesAutoresizingMaskIntoConstraints="NO" id="RYe-jj-QRZ">
                                         <rect key="frame" x="162.5" y="0.0" width="50" height="368.5"/>
-                                        <state key="normal" image="Microphone"/>
-                                    </button>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to listen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sav-TK-ElV">
                                         <rect key="frame" x="141" y="388.5" width="93" height="278.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -54,7 +53,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="microphoneButton" destination="zgV-Uk-shK" id="mUa-NO-SuH"/>
+                        <outlet property="microphoneImageView" destination="RYe-jj-QRZ" id="6EH-QF-1vO"/>
                         <outlet property="noteLabel" destination="Sav-TK-ElV" id="O06-L3-X06"/>
                         <outlet property="tapButton" destination="6q4-hi-HPH" id="Unj-Ah-pYO"/>
                     </connections>
