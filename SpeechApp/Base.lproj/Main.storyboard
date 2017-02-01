@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.43009122290000001" green="0.82456642670000002" blue="0.53408902589999996" alpha="0.095258620689655168" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="viewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D5k-vI-hSb"/>
+                                    <action selector="tappedButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRI-5c-Fm9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,6 +53,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="6q4-hi-HPH" id="hGB-t9-8oW"/>
                         <outlet property="microphoneImageView" destination="RYe-jj-QRZ" id="6EH-QF-1vO"/>
                         <outlet property="noteLabel" destination="Sav-TK-ElV" id="O06-L3-X06"/>
                         <outlet property="tapButton" destination="6q4-hi-HPH" id="Unj-Ah-pYO"/>
@@ -60,6 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="206" y="-944"/>
         </scene>
     </scenes>
     <resources>

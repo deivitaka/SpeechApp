@@ -300,6 +300,7 @@
 				DF5036131E2D82B9006C60C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

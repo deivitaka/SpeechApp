@@ -13,7 +13,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var microphoneImageView: UIImageView!
-    @IBOutlet weak var tapButton: UIButton!
+    @IBOutlet weak var button: UIButton!
     
     private var listening = false
     private var speechRecognizer: SFSpeechRecognizer?
@@ -35,7 +35,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func viewTapped(_ sender: Any) {
+    @IBAction func tappedButton() {
         askMicPermission(completion: { (granted, message) in
             DispatchQueue.main.async {
                 if self.listening {
@@ -61,12 +61,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        tapButton.isEnabled = available
+        button.isEnabled = available
         if available {
             // Prepare to listen
             listening = true
             noteLabel.text = "Tap to listen"
-            viewTapped(tapButton)
+            tappedButton()
         } else {
             noteLabel.text = "Recognition is not available."
         }
@@ -122,8 +122,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             try audioSession.setCategory(AVAudioSessionCategoryRecord)
             try audioSession.setMode(AVAudioSessionModeMeasurement)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        } catch {
-            noteLabel.text = "An error occurred when starting audio session."
+        } catch let error {
+            noteLabel.text = "An error occurred when starting audio session. \(error.localizedDescription)"
             return
         }
         
@@ -169,8 +169,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         do {
             try audioEngine.start()
-        } catch {
-            noteLabel.text = "An error occurred starting audio engine"
+        } catch let error {
+            noteLabel.text = "An error occurred starting audio engine. \(error.localizedDescription)"
         }
     }
     
@@ -180,9 +180,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     private func stopListening() {
         self.audioEngine.stop()
         self.recognitionRequest?.endAudio()
-        
-        self.recognitionRequest = nil
-        self.recognitionTask = nil
     }
 }
 
